@@ -3,6 +3,10 @@
     . on click
     . show or hide the `.sides` div
 ---------*/
+function  myfunction() {
+    var element = document.getElementById("sides");
+    element.classList.toggle("hidden");
+}
 
 /*---------
     Program the two fill inputs to do the following:
