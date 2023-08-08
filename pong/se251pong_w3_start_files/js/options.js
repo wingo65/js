@@ -17,6 +17,26 @@ function  myfunction() {
         . Show the fill's hex code in the output div 
 
 -----------*/
+var userIP = document.querySelectorAll(".fill");
+console.log(userIP)
+
+
+    for (let i=0; i<pad.length; i++)
+    {
+        userIP[i].value = player[i].fill;
+        console.log(userIP)
+        userIP[i].nextSibling.innerHTML = player[i].fill; 
+        userIP[i].addEventListener("input", playerFill)
+        function playerFill(e) {
+            console.log(e.target.value)
+            player[i].fill = e.target.value
+            player[i].pad.fill = e.target.value
+            userIP[i].nextSibling.innerHTML = player[i].fill; 
+        }
+        
+
+    }
+
 
 /*---------
     Program the six key inputs to do the following:
