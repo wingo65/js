@@ -46,3 +46,30 @@ console.log(userIP)
         .Change the player's key to the value of the input
         .Show the player's key in the output div 
 -----------*/
+var input = document.querySelectorAll(`input`);
+for (let i=0; i<input.length; i++){
+    input[i].addEventListener(`focus`, function(e){currentState = `pause`})
+}
+
+
+
+
+var userU = document.querySelectorAll(".u");
+console.log(userU)
+for (let i=0; i<pad.length; i++)
+{
+    userU[i] = player[i].keys.u
+    console.log(userU)
+    userU[i].addEventListener(`keydown`, function(e){
+
+        userU[i].value = [e.key]
+        player[i].keys.u = userU[i].value
+        userU[i].nextSibling.innerHTML = player[i].keys.u
+     })
+    
+   
+        
+
+}
+
+
