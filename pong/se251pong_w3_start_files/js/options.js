@@ -69,6 +69,7 @@ for (let i=0; i<input.length; i++){
 var userU = document.querySelectorAll(".u");
 var userD = document.querySelectorAll(".d");
 var userS = document.querySelectorAll(".s");
+var userPower = document.querySelectorAll(".power")
 
 console.log(userU)
 for (let i=0; i<pad.length; i++)
@@ -97,8 +98,18 @@ for (let i=0; i<pad.length; i++)
          player[i].keys.s = userS[i].value
          userS[i].nextElementSibling.innerHTML = player[i].keys.s
       })
-   
-        
+      userPower[i] = player[i].power;
+      console.log(userPower)
+      userPower[i].addEventListener(`input`, playerPower)
+      function playerPower (e){
+        player[i].power = userPower[i].value
+
+      }
+       
 
 }
+  
+          
+
+
 
