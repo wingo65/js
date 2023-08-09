@@ -18,6 +18,7 @@ function  myfunction() {
 
 -----------*/
 var userIP = document.querySelectorAll(".fill");
+var userStroke = document.querySelectorAll(".stroke");
 console.log(userIP)
 
 
@@ -32,6 +33,17 @@ console.log(userIP)
             player[i].fill = e.target.value
             player[i].pad.fill = e.target.value
             userIP[i].nextSibling.innerHTML = player[i].fill; 
+        }
+        userStroke[i].value = player[i].stroke;
+        console.log(userStroke)
+        userStroke[i].nextSibling.innerHTML = player[i].stroke; 
+        userStroke[i].addEventListener("input", playerStroke)
+        function playerStroke(e) {
+            console.log(e.target.value)
+            player[i].stroke = e.target.value
+            player[i].pad.stroke = e.target.value
+            userStroke[i].nextSibling.innerHTML = player[i].stroke; 
+            pad[i].debug
         }
         
 
@@ -55,6 +67,9 @@ for (let i=0; i<input.length; i++){
 
 
 var userU = document.querySelectorAll(".u");
+var userD = document.querySelectorAll(".d");
+var userS = document.querySelectorAll(".s");
+
 console.log(userU)
 for (let i=0; i<pad.length; i++)
 {
@@ -66,10 +81,24 @@ for (let i=0; i<pad.length; i++)
         player[i].keys.u = userU[i].value
         userU[i].nextSibling.innerHTML = player[i].keys.u
      })
-    
+    userD[i] = player[i].keys.d
+    console.log(userD)
+    userD[i].addEventListener(`keydown`, function(e){
+
+        userD[i].value = [e.key]
+        player[i].keys.d = userD[i].value
+        userD[i].nextElementSibling.innerHTML = player[i].keys.d
+     })
+     userS[i] = player[i].keys.s
+     console.log(userS)
+     userS[i].addEventListener(`keydown`, function(e){
+ 
+         userS[i].value = [e.key]
+         player[i].keys.s = userS[i].value
+         userS[i].nextElementSibling.innerHTML = player[i].keys.s
+      })
    
         
 
 }
-
 
