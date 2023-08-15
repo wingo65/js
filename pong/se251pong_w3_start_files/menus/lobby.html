@@ -47,7 +47,8 @@
             p1 = new User().setProps(JSON.parse(localStorage.getItem(`p1`)))
             console.log(p1)
         }
-        else{
+        else
+        {
             p1 = new User();
         }
 
@@ -56,8 +57,8 @@
 
         for(let i=0; i<fields.length; i++)
         {
-            var keysProp = p1.keys[fields[i].classlist[0]]
-            var normalProp = p1[fields[i].classlist[0]]
+            var keysProp = p1.keys[fields[i].classList[0]]
+            var normalProp = p1[fields[i].classList[0]]
             fields[i].value = (normalProp==undefined)?keysProp:normalProp;
             fields[i].nextElementSibling.innerHTML=(normalProp==undefined)?keysProp:normalProp;
             
