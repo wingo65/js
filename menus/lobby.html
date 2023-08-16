@@ -63,6 +63,10 @@
             fields[i].nextElementSibling.innerHTML=(normalProp==undefined)?keysProp:normalProp;
             
         }
+
+        let params = (new URL(document.location)).searchParams;
+        let name = params.get("load");
+        alert(name);
         
         
     </script>
