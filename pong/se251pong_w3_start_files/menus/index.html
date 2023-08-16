@@ -104,6 +104,10 @@
             });
         })
 
+        let params = (new URL(document.location)).searchParams;
+        let name = params.get("load") == null;
+        alert(name);
+
     </script>
 </body>
 </html>
