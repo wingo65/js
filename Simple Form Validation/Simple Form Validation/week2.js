@@ -1,17 +1,19 @@
 // JavaScript Document
-var person = {
+var person = 
+{
     fname: '',
     lname: '',
     email: '',
     confirm: '',
     phone: '',
-   }
+}
  
 var firstFirst = document.querySelector("#first-name") 
 var lastLast = document.querySelector("#last-name")
 var emailEmail = document.querySelector("#email") 
 var confirmConfirm = document.querySelector("#confirm-email")
 var phonePhone = document.querySelector("#phone")
+var confirmation = document.querySelector("#confirmation")
 console.log(firstFirst)
 console.log(lastLast)
 
@@ -20,33 +22,38 @@ const button = document.querySelector("#confirm");
 
 
 button.addEventListener('click', function(e){
-    let personFirst = /[A-Za-z]-[A-Z\-a-z]{1,}$/
-    if(personFirst.test(firstFirst.value) == false)
+    let personFirst = /^[A-Za-z][A-Z\-a-z]{1,}$/
+    let conEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+    let phoneNum = /^\d{10}$/;
+    if(personFirst.test(firstFirst.value) === false)
     {
-        firstFirst.nextElementSibling.innerHTML = "Invalid First Name"
+        firstFirst.nextElementSibling.innerHTML = "*";
+        firstFirst.classList.toggle("red")
     }
-    if(personFirst.test(lastLast.value) == false)
+    if(personFirst.test(lastLast.value) === false)
     {
-        lastLast.nextElementSibling.innerHTML = "Invalid Last Name"
+        lastLast.nextElementSibling.innerHTML = "*";
     }
-    let conEmail =  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
-    if(conEmail.test(emailEmail) == false)
+    if(conEmail.test(emailEmail.value) === false)
     {
-        emailEmail.nextElementSibling.innerHTML = "Invalid Email"
+        emailEmail.nextElementSibling.innerHTML = "*";
     }
-    if(conEmail.test(emailEmail) == false)
+    if(emailEmail.value != confirmConfirm.value) 
     {
-        emailEmail.nextElementSibling.innerHTML = "Invalid Email"
+        confirmConfirm.nextElementSibling.innerHTML = "*";
     }
-    if(conEmail.test(confirmConfirm) == false)
+   
+    if(phoneNum.test(phonePhone.value) === false)
     {
-        confirmConfirm.nextElementSibling.innerHTML = "Emails do not match!"
+        phonePhone.nextElementSibling.innerHTML = "*";
     }
-    let phoneNum = /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/
-    if(phoneNum.test(phonePhone) == false)
+    else
     {
-        phonePhone.nextElementSibling.innerHTML = "Invalid Phone Number!"
+        x.style.display = "none";
+        w.style.display = "none";
+        confirmation.innerHTML = "#info";
     }
+   
 
 
     
