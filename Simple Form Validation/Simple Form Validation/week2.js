@@ -7,7 +7,11 @@ var person =
     confirm: '',
     phone: '',
 }
- 
+
+var x = document.querySelector("#confirmation")
+var w = document.querySelector("#form")
+var info = document.querySelector("#info")
+
 var firstFirst = document.querySelector("#first-name") 
 var lastLast = document.querySelector("#last-name")
 var emailEmail = document.querySelector("#email") 
@@ -49,9 +53,9 @@ button.addEventListener('click', function(e){
     }
     else
     {
-        x.style.display = "none";
+        x.style.display = "block";
         w.style.display = "none";
-        confirmation.innerHTML = "#info";
+        info.innerHTML = firstFirst.value;
     }
    
 
