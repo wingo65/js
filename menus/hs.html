@@ -32,13 +32,16 @@
             {name:`bbb`, score:980}
         ]
 
-        var message = ``;
         
-        for(let i=0; highScoreList.length; i++ )
+        var message = "";
+        for(let i = 0; i<highScoreList.length; i++)
         {
             message += "First Name" + highScoreList[i].name + "Score" + highScoreList[i].score
+
+            message += " First Name " + highScoreList[i].name + " Score " + highScoreList[i].score
         }
         document.querySelector(`#menus`).innerHTML = message;
+        
         //
         var menus = document.querySelector(`#menus`);
 
