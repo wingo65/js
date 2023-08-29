@@ -32,7 +32,7 @@ button.addEventListener('click', function(e){
     if(personFirst.test(firstFirst.value) === false)
     {
         firstFirst.nextElementSibling.innerHTML = "*";
-        firstFirst.classList.toggle("red")
+        firstFirst.classList.toggle("#red")
     }
     if(personFirst.test(lastLast.value) === false)
     {
@@ -55,7 +55,7 @@ button.addEventListener('click', function(e){
     {
         x.style.display = "block";
         w.style.display = "none";
-        info.innerHTML = firstFirst.value;
+        info.innerHTML = firstFirst.value + lastLast.value + emailEmail.value + phonePhone.value;
     }
    
 
