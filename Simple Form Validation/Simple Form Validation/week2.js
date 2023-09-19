@@ -31,31 +31,35 @@ button.addEventListener('click', function(e){
     let phoneNum = /^\d{10}$/;
     if(personFirst.test(firstFirst.value) === false)
     {
-        firstFirst.nextElementSibling.innerHTML = "*";
+        firstFirst.nextElementSibling.innerHTML = "Please input name/Name must not contain special characters";
         firstFirst.classList.toggle("#red")
     }
     if(personFirst.test(lastLast.value) === false)
     {
-        lastLast.nextElementSibling.innerHTML = "*";
+        lastLast.nextElementSibling.innerHTML = "Please enter last name";
+        lastLast.classList.toggle("#red")
     }
     if(conEmail.test(emailEmail.value) === false)
     {
-        emailEmail.nextElementSibling.innerHTML = "*";
+        emailEmail.nextElementSibling.innerHTML = "Email is not valid!";
+        emailEmail.classList.toggle("#red")
     }
     if(emailEmail.value != confirmConfirm.value) 
     {
-        confirmConfirm.nextElementSibling.innerHTML = "*";
+        confirmConfirm.nextElementSibling.innerHTML = "Emails do not match!";
+        confirmConfirm.classList.toggle("#red")
     }
    
     if(phoneNum.test(phonePhone.value) === false)
     {
-        phonePhone.nextElementSibling.innerHTML = "*";
+        phonePhone.nextElementSibling.innerHTML = "Please enter a 10 digit number (including area code)";
+        phonePhone.classList.toggle("#red")
     }
     else
     {
         x.style.display = "block";
         w.style.display = "none";
-        info.innerHTML = firstFirst.value + lastLast.value + emailEmail.value + phonePhone.value;
+        info.innerHTML = firstFirst.value+ "<br>" + lastLast.value + "<br>" + emailEmail.value + "<br>" + phonePhone.value;
     }
    
 
